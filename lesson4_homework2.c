@@ -1,8 +1,10 @@
-include <stdio.h>
+//関岡 #がありませんでした
+#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-int main();
+//関岡 不要な;があります
+int main()
 {
     int i=100;
     char *str = "100";
@@ -15,7 +17,9 @@ int main();
         printf("false\n");
     }
     
-    i = atoi(str)
+    //関岡 ;を忘れています
+    i = atoi(str);
+    //関岡 数値と文字列のアドレス（ポインタ）を比較しています（コンパイル時にwarningになっています）
     if(i == str){
         printf("true\n");
     }else{
