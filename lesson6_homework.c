@@ -4,8 +4,8 @@
 
 typedef struct LIST
 {
-    char   c_name[10];//親の名前
-    char   p_name[10];//子の名前
+    char   c_name[20];//親の名前
+    char   p_name[20];//子の名前
     int    age;//年齢
     float  height;//身長
     int    phone;//電話番号
@@ -14,8 +14,8 @@ typedef struct LIST
 void show_list(List *childptr){
     int i = 0;
     for(i = 0 ; i<3 ; i++){
-    printf("名前:%s\n 年齢:%d\n 身長:%f\n 保護者:%s\n 電話番号:%d\n", 
-            childptr->c_name, childptr->age, childptr->height, childptr->p_name, childptr->phone);
+    printf("名前:%s\n 年齢:%d\n 身長:%05.1f\n 保護者:%s\n 電話番号:%011d\n", 
+            childptr[i].c_name, childptr[i].age, childptr[i].height, childptr[i].p_name, childptr[i].phone);
     }
 }
 
@@ -34,9 +34,9 @@ int main(){
     child[0].height = 80.5;
     child[1].height = 95.5;
     child[2].height = 105.1;
-    child[0].phone = 0120001001;
-    child[1].phone = 0120002002;
-    child[2].phone = 0120003003;
+    child[0].phone = 010;
+    child[1].phone = 0x10;
+    child[2].phone = 120003003;
     show_list(&child[0]);
     return 0;
 }
